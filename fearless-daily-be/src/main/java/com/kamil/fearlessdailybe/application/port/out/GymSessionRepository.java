@@ -9,6 +9,7 @@ import java.util.UUID;
 
 
 public interface GymSessionRepository {
+
     GymSession save(GymSession gymSession);
 
     Optional<GymSession> findById(UUID id);
