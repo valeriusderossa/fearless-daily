@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface GymSessionService {
+public interface GymSessionPersistence {
+
     GymSession createGymSession(String gymName, DayOfWeek dayOfWeek);
 
     GymSession updateGymSession(UUID id, String gymName, DayOfWeek dayOfWeek);

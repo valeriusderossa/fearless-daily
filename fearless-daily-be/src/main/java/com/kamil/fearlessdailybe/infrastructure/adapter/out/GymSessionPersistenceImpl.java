@@ -1,23 +1,21 @@
-package com.kamil.fearlessdailybe.application.domain.service;
+package com.kamil.fearlessdailybe.infrastructure.adapter.out;
 
 import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.application.port.in.GymSessionPersistence;
 import com.kamil.fearlessdailybe.application.port.out.GymSessionRepository;
-import com.kamil.fearlessdailybe.application.port.in.GymSessionService;
-import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Service
-public class GymSessionServiceImpl implements GymSessionService {
-
+@RequiredArgsConstructor
+@Component
+class GymSessionPersistenceImpl implements GymSessionPersistence {
     private final GymSessionRepository gymSessionRepository;
 
-    public GymSessionServiceImpl(GymSessionRepository gymSessionRepository) {
-        this.gymSessionRepository = gymSessionRepository;
-    }
 
     @Override
     public GymSession createGymSession(String gymName, DayOfWeek dayOfWeek) {

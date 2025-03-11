@@ -1,6 +1,7 @@
 package com.kamil.fearlessdailybe.infrastructure.adapter.out;
 
 import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.application.port.out.GymSessionRepository;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,53 +14,53 @@ import java.util.UUID;
 
 @Repository
 @Primary
-public class GymSessionRepository implements com.kamil.fearlessdailybe.application.port.out.GymSessionRepository {
+public class GymSessionRepositoryImpl implements GymSessionRepository {
 
     private final JdbcTemplate jdbcTemplate;
-    
-    private final RowMapper<GymSession> rowMapper = (rs, rowNum) -> 
-        new GymSession(
-            UUID.fromString(rs.getString("id")),
-            rs.getString("gym_name"),
-            DayOfWeek.valueOf(rs.getString("day_of_week")),
-            rs.getBoolean("completed")
-        );
 
-    public GymSessionRepository(JdbcTemplate jdbcTemplate) {
+    private final RowMapper<GymSession> rowMapper = (rs, rowNum) ->
+            new GymSession(
+                    UUID.fromString(rs.getString("id")),
+                    rs.getString("gym_name"),
+                    DayOfWeek.valueOf(rs.getString("day_of_week")),
+                    rs.getBoolean("completed")
+            );
+
+    public GymSessionRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
     public GymSession save(GymSession gymSession) {
         String sql = "INSERT INTO gym_sessions (id, gym_name, day_of_week, completed) " +
-                     "VALUES (?, ?, ?, ?) " +
-                     "ON CONFLICT (id) DO UPDATE " +
-                     "SET gym_name = ?, day_of_week = ?, completed = ?";
-        
+                "VALUES (?, ?, ?, ?) " +
+                "ON CONFLICT (id) DO UPDATE " +
+                "SET gym_name = ?, day_of_week = ?, completed = ?";
+
         jdbcTemplate.update(
-            sql,
-            gymSession.getId().toString(),
-            gymSession.getGymName(),
-            gymSession.getDayOfWeek().toString(),
-            gymSession.isCompleted(),
-            gymSession.getGymName(),
-            gymSession.getDayOfWeek().toString(),
-            gymSession.isCompleted()
+                sql,
+                gymSession.getId().toString(),
+                gymSession.getGymName(),
+                gymSession.getDayOfWeek().toString(),
+                gymSession.isCompleted(),
+                gymSession.getGymName(),
+                gymSession.getDayOfWeek().toString(),
+                gymSession.isCompleted()
         );
-        
+
         return gymSession;
     }
 
     @Override
     public Optional<GymSession> findById(UUID id) {
         String sql = "SELECT id, gym_name, day_of_week, completed FROM gym_sessions WHERE id = ?";
-        
+
         List<GymSession> results = jdbcTemplate.query(
-            sql,
-            rowMapper,
-            id.toString()
+                sql,
+                rowMapper,
+                id.toString()
         );
-        
+
         return results.isEmpty() ? Optional.empty() : Optional.of(results.get(0));
     }
 
