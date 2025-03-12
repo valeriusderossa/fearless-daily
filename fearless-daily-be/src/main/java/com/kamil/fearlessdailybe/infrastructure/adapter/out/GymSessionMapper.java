@@ -1,6 +1,6 @@
 package com.kamil.fearlessdailybe.infrastructure.adapter.out;
 
-import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.domain.model.GymSession;
 import org.springframework.stereotype.Component;
 
 @Component

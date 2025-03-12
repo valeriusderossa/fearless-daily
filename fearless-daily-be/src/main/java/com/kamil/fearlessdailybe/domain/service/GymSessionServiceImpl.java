@@ -1,6 +1,6 @@
-package com.kamil.fearlessdailybe.application.domain.service;
+package com.kamil.fearlessdailybe.domain.service;
 
-import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.domain.model.GymSession;
 import com.kamil.fearlessdailybe.application.port.in.GymSessionService;
 import com.kamil.fearlessdailybe.application.port.out.GymSessionRepository;
 import lombok.RequiredArgsConstructor;
@@ -64,15 +64,6 @@ class GymSessionServiceImpl implements GymSessionService {
         return gymSessionRepository.findAll();
     }
 
-    @Override
-    public List<GymSession> getGymSessionsByDay(DayOfWeek dayOfWeek) {
-        return gymSessionRepository.findByDayOfWeek(dayOfWeek);
-    }
-
-    @Override
-    public List<GymSession> getGymSessionsByGymName(String gymName) {
-        return gymSessionRepository.findByGymName(gymName);
-    }
 
     @Override
     public void deleteGymSession(UUID id) {

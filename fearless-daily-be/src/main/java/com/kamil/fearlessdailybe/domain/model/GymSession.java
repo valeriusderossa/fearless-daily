@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.application.domain.model;
+package com.kamil.fearlessdailybe.domain.model;
 
 import lombok.Getter;
 import lombok.Setter;

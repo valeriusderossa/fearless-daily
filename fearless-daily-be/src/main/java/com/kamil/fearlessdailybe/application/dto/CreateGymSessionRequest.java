@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.application.domain.dto;
+package com.kamil.fearlessdailybe.application.dto;
 
 import java.time.DayOfWeek;
 

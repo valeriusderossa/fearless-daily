@@ -1,6 +1,6 @@
 package com.kamil.fearlessdailybe.application.port.in;
 
-import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.domain.model.GymSession;
 
 import java.time.DayOfWeek;
 import java.util.List;
@@ -20,10 +20,6 @@ public interface GymSessionService {
     Optional<GymSession> getGymSessionById(UUID id);
 
     List<GymSession> getAllGymSessions();
-
-    List<GymSession> getGymSessionsByDay(DayOfWeek dayOfWeek);
-
-    List<GymSession> getGymSessionsByGymName(String gymName);
 
     void deleteGymSession(UUID id);
 }

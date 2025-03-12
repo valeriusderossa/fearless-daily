@@ -1,8 +1,8 @@
 package com.kamil.fearlessdailybe.infrastructure.adapter.in;
 
-import com.kamil.fearlessdailybe.application.domain.dto.CreateGymSessionRequest;
-import com.kamil.fearlessdailybe.application.domain.dto.UpdateGymSessionRequest;
-import com.kamil.fearlessdailybe.application.domain.model.GymSession;
+import com.kamil.fearlessdailybe.application.dto.CreateGymSessionRequest;
+import com.kamil.fearlessdailybe.application.dto.UpdateGymSessionRequest;
+import com.kamil.fearlessdailybe.domain.model.GymSession;
 import com.kamil.fearlessdailybe.application.port.in.GymSessionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -65,18 +65,6 @@ public class GymSessionController {
     @GetMapping
     public ResponseEntity<List<GymSession>> getAllGymSessions() {
         return ResponseEntity.ok(gymSessionService.getAllGymSessions());
-    }
-
-    @GetMapping("/by-day/{dayOfWeek}")
-    public ResponseEntity<List<GymSession>> getGymSessionsByDay(
-            @PathVariable DayOfWeek dayOfWeek) {
-        return ResponseEntity.ok(gymSessionService.getGymSessionsByDay(dayOfWeek));
-    }
-
-    @GetMapping("/by-gym")
-    public ResponseEntity<List<GymSession>> getGymSessionsByGymName(
-            @RequestParam String gymName) {
-        return ResponseEntity.ok(gymSessionService.getGymSessionsByGymName(gymName));
     }
 
     @DeleteMapping("/{id}")
