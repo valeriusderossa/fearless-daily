@@ -1,30 +1,38 @@
 package com.kamil.fearlessdailybe.domain.service;
 
-import com.kamil.fearlessdailybe.application.port.out.ExerciseSetRepository;
+import com.kamil.fearlessdailybe.application.port.in.ExerciseSetService;
 import com.kamil.fearlessdailybe.domain.model.ExerciseSet;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public class ExerciseServiceSetImpl implements ExerciseSetRepository {
+@Service
+public class ExerciseServiceSetImpl implements ExerciseSetService {
+
     @Override
-    public ExerciseSet save(ExerciseSet exerciseSet) {
+    public ExerciseSet createExerciseSet(UUID exerciseId, int reps, double weight) {
         return null;
     }
 
     @Override
-    public Optional<ExerciseSet> findById(UUID id) {
+    public ExerciseSet updateExerciseSet(UUID id, UUID exerciseId, int reps, double weight) {
+        return null;
+    }
+
+    @Override
+    public Optional<ExerciseSet> getExerciseSetId(UUID id) {
         return Optional.empty();
     }
 
     @Override
-    public List<ExerciseSet> findAll() {
+    public List<ExerciseSet> getAllExerciseSet() {
         return List.of();
     }
 
     @Override
-    public void deleteById(UUID id) {
+    public void deleteExercise(UUID id) {
 
     }
 }

@@ -2,20 +2,22 @@ package com.kamil.fearlessdailybe.domain.service;
 
 import com.kamil.fearlessdailybe.application.port.in.ExerciseService;
 import com.kamil.fearlessdailybe.domain.model.Exercise;
+import org.springframework.stereotype.Service;
 
-import java.time.DayOfWeek;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ExerciseServiceImpl implements ExerciseService {
+
     @Override
-    public Exercise createExercise(String gymName, DayOfWeek dayOfWeek) {
+    public Exercise createExercise(String name, String notes) {
         return null;
     }
 
     @Override
-    public Exercise updateExercise(UUID id, String gymName, DayOfWeek dayOfWeek) {
+    public Exercise updateExercise(UUID id, String name, String notes) {
         return null;
     }
 
