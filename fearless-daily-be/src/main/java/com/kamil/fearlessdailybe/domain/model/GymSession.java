@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.DayOfWeek;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -14,6 +15,7 @@ public class GymSession {
     private String gymName;
     private DayOfWeek dayOfWeek;
     private boolean completed;
+    private List<Exercise> exercises;
 
 
     public GymSession(String gymName, DayOfWeek dayOfWeek) {

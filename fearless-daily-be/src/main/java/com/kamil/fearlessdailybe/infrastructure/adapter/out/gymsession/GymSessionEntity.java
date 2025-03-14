@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.infrastructure.adapter.out;
+package com.kamil.fearlessdailybe.infrastructure.adapter.out.gymsession;
 
 import java.time.DayOfWeek;
 import java.util.UUID;

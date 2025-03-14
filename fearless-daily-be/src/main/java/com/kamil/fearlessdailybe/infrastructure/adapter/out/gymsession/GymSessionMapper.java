@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.infrastructure.adapter.out;
+package com.kamil.fearlessdailybe.infrastructure.adapter.out.gymsession;
 
 import com.kamil.fearlessdailybe.domain.model.GymSession;
 import org.springframework.stereotype.Component;

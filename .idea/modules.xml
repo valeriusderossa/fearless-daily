@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fearless-daily.iml" filepath="$PROJECT_DIR$/.idea/fearless-daily.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fearless-daily-be.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fearless-daily-be.main.iml" />
     </modules>
   </component>
 </project>

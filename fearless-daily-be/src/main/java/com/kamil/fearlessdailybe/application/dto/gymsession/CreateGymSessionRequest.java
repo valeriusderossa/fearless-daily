@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.application.dto;
+package com.kamil.fearlessdailybe.application.dto.gymsession;
 
 import java.time.DayOfWeek;
 

@@ -1,4 +1,4 @@
-package com.kamil.fearlessdailybe.infrastructure.adapter.out;
+package com.kamil.fearlessdailybe.infrastructure.adapter.out.gymsession;
 
 import com.kamil.fearlessdailybe.domain.model.GymSession;
 import com.kamil.fearlessdailybe.application.port.out.GymSessionRepository;
@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @Repository
 @AllArgsConstructor
-public class GameSessionRepositoryImpl implements GymSessionRepository {
+public class GymSessionRepositoryImpl implements GymSessionRepository {
 
     private final JdbcTemplate jdbcTemplate;
 

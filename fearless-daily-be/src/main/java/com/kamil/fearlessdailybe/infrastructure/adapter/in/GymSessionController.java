@@ -1,14 +1,13 @@
 package com.kamil.fearlessdailybe.infrastructure.adapter.in;
 
-import com.kamil.fearlessdailybe.application.dto.CreateGymSessionRequest;
-import com.kamil.fearlessdailybe.application.dto.UpdateGymSessionRequest;
+import com.kamil.fearlessdailybe.application.dto.gymsession.CreateGymSessionRequest;
+import com.kamil.fearlessdailybe.application.dto.gymsession.UpdateGymSessionRequest;
 import com.kamil.fearlessdailybe.domain.model.GymSession;
 import com.kamil.fearlessdailybe.application.port.in.GymSessionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.DayOfWeek;
 import java.util.List;
 import java.util.UUID;
 
